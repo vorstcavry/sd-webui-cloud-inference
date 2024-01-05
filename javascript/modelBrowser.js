@@ -70,8 +70,6 @@ function doThingsAfterPopup(tab) {
   // addNsfwToggle()
   addImageClickListener(tab);
 
-
-  applyNsfwClass(tab);
 }
 
 function addImageClickListener(tab) {
@@ -112,20 +110,6 @@ function addFilterButtons(tab, kind) {
 
       toggleSelected(button); // Add selected style to clicked button
     });
-  });
-}
-
-
-function applyNsfwClass(tab) {
-  const imageItems = document.querySelectorAll('.image-item');
-
-  imageItems.forEach(item => {
-    const itemTags = item.getAttribute('data-tags').split(' ');
-    if (itemTags.includes('nsfw')) {
-      item.classList.add('nsfw');
-    } else {
-      item.classList.remove('nsfw');
-    }
   });
 }
 
